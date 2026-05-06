@@ -45,27 +45,28 @@ section{padding:80px 20px}
 .s-white{background:#fff;color:var(--text-dark)}
 
 /* Hero */
-.hero{background:linear-gradient(110deg,#05080f 0%,#0a0f1e 40%,#0d1428 100%);padding:0;text-align:left;position:relative;overflow:hidden;min-height:620px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(26,58,110,.18) 0%,transparent 65%);pointer-events:none}
-.hero-inner{display:flex;align-items:stretch;min-height:620px;max-width:1200px;margin:0 auto;padding:0 60px}
-.hero-content{flex:0 0 54%;padding:64px 48px 64px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.hero{background:linear-gradient(110deg,#05080f 0%,#0a0f1e 50%,#0c1220 100%);padding:0;text-align:left;position:relative;overflow:hidden;min-height:660px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(26,58,110,.15) 0%,transparent 60%);pointer-events:none;z-index:0}
+.hero-inner{position:relative;min-height:660px;max-width:1200px;margin:0 auto;padding:70px 60px}
+.hero-content{max-width:530px;position:relative;z-index:2}
+.hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:36px}
 .hero-logo-icon{font-size:2rem;color:var(--gold);line-height:1}
 .hero-logo-text{display:flex;flex-direction:column}
 .hero-logo-desafio{font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);line-height:1;margin-bottom:2px}
 .hero-logo-name{font-size:1.15rem;font-weight:800;color:#fff;line-height:1.1;letter-spacing:.04em}
-.hero h1{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;line-height:1.25;margin-bottom:20px;color:#fff}
+.hero h1{font-size:clamp(1.4rem,2.8vw,2.3rem);font-weight:800;line-height:1.25;margin-bottom:20px;color:#fff}
 .hero h1 em{color:var(--gold2);font-style:normal}
-.hero p{font-size:.97rem;color:var(--gray);margin-bottom:14px;line-height:1.75}
-.hero p:last-of-type{margin-bottom:32px}
-.hero-right{flex:0 0 46%;position:relative;display:flex;align-items:flex-end;justify-content:flex-end}
-.hero-right img{height:100%;max-height:680px;width:auto;object-fit:cover;object-position:top center;display:block;position:absolute;bottom:0;right:-60px}
-.vsl-box{background:rgba(0,0,0,.45);border:2px dashed rgba(26,58,110,.7);border-radius:12px;padding:60px 20px;max-width:640px;margin:0 auto 32px;font-size:1.8rem;color:rgba(255,255,255,.35)}
+.hero p{font-size:.95rem;color:var(--gray);margin-bottom:14px;line-height:1.8}
+.hero p:last-of-type{margin-bottom:36px}
+.hero-right{position:absolute;right:0;top:0;bottom:0;width:48%;z-index:1;pointer-events:none}
+.hero-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:55%;background:linear-gradient(to right,#05080f 0%,transparent 100%);z-index:2}
+.hero-right img{position:absolute;bottom:0;right:0;height:115%;width:auto;max-width:none;display:block;object-fit:cover;object-position:top center}
 @media(max-width:900px){
-  .hero-inner{flex-direction:column;padding:50px 24px 0}
-  .hero-content{flex:none;padding:0 0 40px}
-  .hero-right{flex:none;height:340px;margin:0 -24px}
-  .hero-right img{width:100%;height:100%;right:0;position:relative;object-fit:cover}
+  .hero-inner{padding:50px 24px 0;min-height:auto}
+  .hero-content{max-width:100%}
+  .hero-right{position:relative;width:100%;height:360px;margin-top:32px}
+  .hero-right::before{width:100%;background:linear-gradient(to bottom,#05080f 0%,transparent 30%)}
+  .hero-right img{width:100%;height:100%;right:0;object-fit:cover}
 }
 
 /* Marquee */
@@ -183,13 +184,14 @@ section{padding:80px 20px}
           <div class="hero-logo-name">MAPA DA<br>REFORMA</div>
         </div>
       </div>
-      <h1>O que a reforma tributária vai custar à sua empresa em 2027 <em>depende do que você decidir agora.</em></h1>
-      <p>Um mapa objetivo da LC 214 e da LC 224 para advogados, contadores e empresários que precisam transformar leitura de lei em decisão estratégica antes que o tempo feche a janela.</p>
-      <p>Com o Prof. Dr. Éderson Porto — Doutor em Direito Tributário pela UFRGS, 20 anos de atuação, recuperação de tributos na casa de centenas de milhões de reais.</p>
+      <h1>Dê o primeiro passo para entender a <em>Reforma Tributária — o que muda, o que continua e como se preparar para a transição até 2033.</em></h1>
+      <p>A convivência entre o modelo atual e o novo (IBS, CBS e Imposto Seletivo) traz dúvidas e interpretações conflitantes.</p>
+      <p>Nas <strong>3 aulas do curso Mapa da Reforma</strong>, o Prof. Dr. Éderson Porto apresenta os fundamentos da EC 132/2023 e mostra, com didática e método, como organizar o raciocínio e entender a lógica da Reforma sem excesso de complexidade.</p>
+      <p>Uma introdução essencial para <strong>compreender com segurança o início da nova era tributária.</strong></p>
       <a href="#" class="btn">QUERO ACESSAR O MAPA</a>
     </div>
     <div class="hero-right">
-      <img src="ederson-1.png" alt="Éderson Porto" id="hero-img">
+      <img src="ederson-hero.png" alt="Éderson Porto" id="hero-img">
     </div>
   </div>
 </section>
