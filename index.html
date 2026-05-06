@@ -41,13 +41,13 @@ section{padding:80px 20px}
 /* Hero */
 .hero{background:#05080f;padding:0;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
 .hero-bg-gradient{position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(15,32,68,.8) 0%,#05080f 60%);z-index:0;pointer-events:none}
-.hero-photo-desktop{display:none;position:absolute;right:0;top:0;width:52%;height:100%;z-index:0;overflow:hidden;pointer-events:none}
-.hero-photo-desktop::before{content:'';position:absolute;left:0;top:0;width:45%;height:100%;background:linear-gradient(to right,#05080f 0%,rgba(5,8,15,.8) 50%,transparent 100%);z-index:1}
-.hero-photo-desktop img{position:absolute;right:0;top:0;height:100%;width:auto;opacity:.95;display:block}
+.hero-photo-desktop{display:none;position:absolute;right:0;top:0;width:50%;height:100%;z-index:0;overflow:hidden;pointer-events:none}
+.hero-photo-desktop::before{content:'';position:absolute;left:0;top:0;width:35%;height:100%;background:linear-gradient(to right,#05080f 0%,rgba(5,8,15,.9) 40%,transparent 100%);z-index:1}
+.hero-photo-desktop img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.95;display:block}
 .hero-photo-mobile{display:block;position:absolute;left:0;top:0;width:100%;height:55vh;z-index:0;overflow:hidden;pointer-events:none}
 .hero-photo-mobile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:85%;background:linear-gradient(to top,rgba(5,8,15,1) 0%,rgba(5,8,15,.95) 25%,rgba(5,8,15,.6) 55%,rgba(5,8,15,0) 100%);z-index:10}
-.hero-photo-mobile img{width:100%;height:100%;object-fit:cover;object-position:center 15%;opacity:.9;display:block}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;padding:52vh 24px 56px;position:relative;z-index:10}
+.hero-photo-mobile img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.9;display:block}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;padding:0 24px;position:relative;z-index:10;padding-top:52vh;padding-bottom:56px}
 .hero-content{max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
 .hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:36px}
 .hero-logo-icon{font-size:2rem;color:var(--gold);line-height:1}
@@ -61,8 +61,8 @@ section{padding:80px 20px}
 @media(min-width:1024px){
   .hero-photo-desktop{display:block}
   .hero-photo-mobile{display:none}
-  .hero-inner{padding:0 48px;min-height:100vh;display:flex;align-items:center}
-  .hero-content{max-width:52%}
+  .hero-inner{padding-top:0;padding-bottom:0;padding-left:48px;padding-right:48px;min-height:100vh;display:flex;align-items:center}
+  .hero-content{max-width:56%}
 }
 
 /* Marquee */
