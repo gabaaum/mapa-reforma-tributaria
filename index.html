@@ -144,10 +144,15 @@ section{padding:80px 20px}
 .selo{font-size:.75rem;color:var(--gray);display:flex;align-items:center;gap:6px}
 .selo::before{content:"✓";color:var(--gold2);font-weight:900}
 
-/* FAQ */
-.faq-item{border-bottom:1px solid rgba(255,255,255,.1);padding:24px 0}
-.faq-q{font-size:.97rem;font-weight:700;color:var(--white)}
-.faq-a{font-size:.9rem;color:var(--gray);margin-top:14px;line-height:1.75}
+/* FAQ Accordion */
+.faq-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.faq-item:first-of-type{border-top:1px solid rgba(255,255,255,.1)}
+.faq-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;text-align:left;color:var(--white)}
+.faq-q{font-size:.97rem;font-weight:700;color:var(--white);line-height:1.4}
+.faq-icon{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;color:var(--gold2);font-size:1.1rem;font-weight:300;line-height:1;transition:transform .25s,background .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(201,168,76,.12)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-body-inner{font-size:.9rem;color:var(--gray);padding-bottom:22px;line-height:1.75}
 
 /* Final CTA */
 .final-cta{background:linear-gradient(160deg,var(--dark2) 0%,var(--navy) 100%);text-align:center;padding:80px 20px}
@@ -414,26 +419,48 @@ section{padding:80px 20px}
   <div class="container" style="max-width:720px">
     <div class="divider-left"></div>
     <h2 class="section-title">Perguntas frequentes</h2>
+    <br>
+
     <div class="faq-item">
-      <div class="faq-q">Este curso é para advogados iniciantes ou experientes?</div>
-      <div class="faq-a">O Desafio Mapa da Reforma foi criado para quem ainda está se familiarizando com a Reforma Tributária, mas deseja compreender os fundamentos, identificar riscos e oportunidades e aplicar o Método 3D de forma estruturada. Tanto iniciantes quanto profissionais experientes podem se beneficiar da visão clara que apresento.</div>
+      <button class="faq-toggle" onclick="faqToggle(this)">
+        <span class="faq-q">Este curso é para advogados iniciantes ou experientes?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">O Desafio Mapa da Reforma foi criado para quem ainda está se familiarizando com a Reforma Tributária, mas deseja compreender os fundamentos, identificar riscos e oportunidades e aplicar o Método 3D de forma estruturada. Tanto iniciantes quanto profissionais experientes podem se beneficiar da visão clara que apresento.</div></div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">Quanto tempo duram as aulas?</div>
-      <div class="faq-a">São 3 aulas de 90 minutos cada, pensadas para transmitir os conceitos essenciais de forma objetiva, sem sobrecarregar com detalhes excessivos.</div>
+      <button class="faq-toggle" onclick="faqToggle(this)">
+        <span class="faq-q">Quanto tempo duram as aulas?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">São 3 aulas de 90 minutos cada, pensadas para transmitir os conceitos essenciais de forma objetiva, sem sobrecarregar com detalhes excessivos.</div></div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">Preciso ter conhecimento prévio sobre a Reforma?</div>
-      <div class="faq-a">Não. O curso foi planejado como introdução estruturada, para que você compreenda o que muda, o que permanece e como se preparar para a transição até 2033.</div>
+      <button class="faq-toggle" onclick="faqToggle(this)">
+        <span class="faq-q">Preciso ter conhecimento prévio sobre a Reforma?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">Não. O curso foi planejado como introdução estruturada, para que você compreenda o que muda, o que permanece e como se preparar para a transição até 2033.</div></div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">As aulas são ao vivo ou gravadas?</div>
-      <div class="faq-a">O Desafio é gravado em 3 aulas, permitindo que você assista quando quiser, mas mantendo o ritmo e a organização do método aplicado.</div>
+      <button class="faq-toggle" onclick="faqToggle(this)">
+        <span class="faq-q">As aulas são ao vivo ou gravadas?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">O Desafio é gravado em 3 aulas, permitindo que você assista quando quiser, mas mantendo o ritmo e a organização do método aplicado.</div></div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">Qual é o valor do curso e como faço para acessar?</div>
-      <div class="faq-a">O investimento é de R$297 à vista ou 12x de R$30,72 no cartão. Clique no botão de inscrição para acessar imediatamente o checkout e garantir sua vaga.</div>
+      <button class="faq-toggle" onclick="faqToggle(this)">
+        <span class="faq-q">Qual é o valor do curso e como faço para acessar?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">O investimento é de R$297 à vista ou 12x de R$30,72 no cartão. Clique no botão de inscrição para acessar imediatamente o checkout e garantir sua vaga.</div></div>
     </div>
+
   </div>
 </section>
 
@@ -447,5 +474,20 @@ section{padding:80px 20px}
   </div>
 </section>
 
+<script>
+function faqToggle(btn){
+  var item=btn.parentElement;
+  var body=item.querySelector('.faq-body');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-body').style.maxHeight='0';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    body.style.maxHeight=body.scrollHeight+'px';
+  }
+}
+</script>
 </body>
 </html>
