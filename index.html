@@ -45,10 +45,21 @@ section{padding:80px 20px}
 .s-white{background:var(--dark2);color:var(--white)}
 
 /* Hero */
-.hero{background:linear-gradient(110deg,#05080f 0%,#0a0f1e 50%,#0c1220 100%);padding:0;text-align:left;position:relative;overflow:hidden;min-height:660px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(26,58,110,.15) 0%,transparent 60%);pointer-events:none;z-index:0}
-.hero-inner{position:relative;min-height:660px;max-width:1200px;margin:0 auto;padding:70px 60px}
-.hero-content{max-width:530px;position:relative;z-index:2}
+.hero{background:#05080f;padding:0;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+.hero-bg-gradient{position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(15,32,68,.8) 0%,#05080f 60%);z-index:0;pointer-events:none}
+
+/* Foto desktop: direita 50%, altura total */
+.hero-photo-desktop{display:none;position:absolute;right:0;top:0;width:50%;height:100%;z-index:0;overflow:hidden;pointer-events:none}
+.hero-photo-desktop::before{content:'';position:absolute;left:0;top:0;width:40%;height:100%;background:linear-gradient(to right,#05080f 0%,rgba(5,8,15,.85) 40%,transparent 100%);z-index:1}
+.hero-photo-desktop img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.95;display:block}
+
+/* Foto mobile: topo 55vh */
+.hero-photo-mobile{display:block;position:absolute;left:0;top:0;width:100%;height:55vh;z-index:0;overflow:hidden;pointer-events:none}
+.hero-photo-mobile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:85%;background:linear-gradient(to top,rgba(5,8,15,1) 0%,rgba(5,8,15,.95) 25%,rgba(5,8,15,.6) 55%,rgba(5,8,15,0) 100%);z-index:10}
+.hero-photo-mobile img{width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:.9;display:block}
+
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;padding:52vh 24px 56px;position:relative;z-index:10}
+.hero-content{max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
 .hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:36px}
 .hero-logo-icon{font-size:2rem;color:var(--gold);line-height:1}
 .hero-logo-text{display:flex;flex-direction:column}
@@ -58,15 +69,12 @@ section{padding:80px 20px}
 .hero h1 em{color:var(--gold2);font-style:normal}
 .hero p{font-size:.95rem;color:var(--gray);margin-bottom:14px;line-height:1.8}
 .hero p:last-of-type{margin-bottom:36px}
-.hero-right{position:absolute;right:0;top:0;bottom:0;width:48%;z-index:1;pointer-events:none}
-.hero-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:55%;background:linear-gradient(to right,#05080f 0%,transparent 100%);z-index:2}
-.hero-right img{position:absolute;bottom:0;right:0;height:115%;width:auto;max-width:none;display:block;object-fit:cover;object-position:top center}
-@media(max-width:900px){
-  .hero-inner{padding:50px 24px 0;min-height:auto}
-  .hero-content{max-width:100%}
-  .hero-right{position:relative;width:100%;height:360px;margin-top:32px}
-  .hero-right::before{width:100%;background:linear-gradient(to bottom,#05080f 0%,transparent 30%)}
-  .hero-right img{width:100%;height:100%;right:0;object-fit:cover}
+
+@media(min-width:1024px){
+  .hero-photo-desktop{display:block}
+  .hero-photo-mobile{display:none}
+  .hero-inner{padding:0 48px;min-height:100vh;display:flex;align-items:center}
+  .hero-content{max-width:52%}
 }
 
 /* Marquee */
@@ -175,6 +183,13 @@ section{padding:80px 20px}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-photo-desktop">
+    <img src="ederson-hero.png" alt="Éderson Porto">
+  </div>
+  <div class="hero-photo-mobile">
+    <img src="ederson-hero.png" alt="Éderson Porto">
+  </div>
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-logo">
@@ -189,9 +204,6 @@ section{padding:80px 20px}
       <p>Nas <strong>3 aulas do curso Mapa da Reforma</strong>, o Prof. Dr. Éderson Porto apresenta os fundamentos da EC 132/2023 e mostra, com didática e método, como organizar o raciocínio e entender a lógica da Reforma sem excesso de complexidade.</p>
       <p>Uma introdução essencial para <strong>compreender com segurança o início da nova era tributária.</strong></p>
       <a href="#" class="btn">QUERO ACESSAR O MAPA</a>
-    </div>
-    <div class="hero-right">
-      <img src="ederson-hero.png" alt="Éderson Porto" id="hero-img">
     </div>
   </div>
 </section>
