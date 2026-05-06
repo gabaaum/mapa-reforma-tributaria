@@ -29,10 +29,10 @@ body{font-family:'Poppins',sans-serif;color:var(--white);background:var(--dark);
 a{text-decoration:none;color:inherit}
 
 /* Botões */
-.btn{display:inline-block;background:linear-gradient(90deg,var(--green1),var(--green2));color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;padding:18px 40px;border-radius:6px;cursor:pointer;border:none;text-align:center;transition:transform .2s,box-shadow .2s;text-decoration:none}
-.btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(34,168,90,.4)}
+.btn{display:inline-block;background:linear-gradient(135deg,#b8922a 0%,#f0d060 45%,#e8c070 55%,#b8922a 100%);color:#111;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;padding:18px 40px;border-radius:6px;cursor:pointer;border:none;text-align:center;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,.5)}
 .btn-full{display:block;width:100%;max-width:500px;margin:0 auto}
-.btn-chk{background:linear-gradient(90deg,#1a6b3a,#22a85a)}
+.btn-chk{background:linear-gradient(135deg,#b8922a 0%,#f0d060 45%,#e8c070 55%,#b8922a 100%);color:#111}
 
 /* Layout */
 section{padding:80px 20px}
@@ -45,18 +45,31 @@ section{padding:80px 20px}
 .s-white{background:#fff;color:var(--text-dark)}
 
 /* Hero */
-.hero{background:linear-gradient(160deg,#080d14 0%,var(--dark2) 50%,#0a1a35 100%);padding:80px 20px 60px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(26,58,110,.35) 0%,transparent 70%);pointer-events:none}
-.hero-tag{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.45);color:var(--gold2);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 20px;border-radius:100px;margin-bottom:24px}
-.hero h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:20px;color:#fff}
+.hero{background:linear-gradient(110deg,#05080f 0%,#0a0f1e 40%,#0d1428 100%);padding:0;text-align:left;position:relative;overflow:hidden;min-height:620px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(26,58,110,.18) 0%,transparent 65%);pointer-events:none}
+.hero-inner{display:flex;align-items:stretch;min-height:620px;max-width:1200px;margin:0 auto;padding:0 60px}
+.hero-content{flex:0 0 54%;padding:64px 48px 64px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-logo{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.hero-logo-icon{font-size:2rem;color:var(--gold);line-height:1}
+.hero-logo-text{display:flex;flex-direction:column}
+.hero-logo-desafio{font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);line-height:1;margin-bottom:2px}
+.hero-logo-name{font-size:1.15rem;font-weight:800;color:#fff;line-height:1.1;letter-spacing:.04em}
+.hero h1{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;line-height:1.25;margin-bottom:20px;color:#fff}
 .hero h1 em{color:var(--gold2);font-style:normal}
-.hero p{font-size:1rem;color:var(--gray);max-width:640px;margin:0 auto 32px}
-.hero-img{display:flex;justify-content:center;margin-bottom:32px}
-.hero-img img{width:100%;max-width:420px;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.hero p{font-size:.97rem;color:var(--gray);margin-bottom:14px;line-height:1.75}
+.hero p:last-of-type{margin-bottom:32px}
+.hero-right{flex:0 0 46%;position:relative;display:flex;align-items:flex-end;justify-content:flex-end}
+.hero-right img{height:100%;max-height:680px;width:auto;object-fit:cover;object-position:top center;display:block;position:absolute;bottom:0;right:-60px}
 .vsl-box{background:rgba(0,0,0,.45);border:2px dashed rgba(26,58,110,.7);border-radius:12px;padding:60px 20px;max-width:640px;margin:0 auto 32px;font-size:1.8rem;color:rgba(255,255,255,.35)}
+@media(max-width:900px){
+  .hero-inner{flex-direction:column;padding:50px 24px 0}
+  .hero-content{flex:none;padding:0 0 40px}
+  .hero-right{flex:none;height:340px;margin:0 -24px}
+  .hero-right img{width:100%;height:100%;right:0;position:relative;object-fit:cover}
+}
 
 /* Marquee */
-.marquee-wrap{background:linear-gradient(90deg,var(--blue),#1e4d9b,var(--blue));padding:13px 0;overflow:hidden}
+.marquee-wrap{background:linear-gradient(90deg,#7a5c10,#b8922a,#7a5c10);padding:13px 0;overflow:hidden}
 .marquee{display:flex;white-space:nowrap;animation:marquee 25s linear infinite}
 .marquee span{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding-right:40px;opacity:.85}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -120,16 +133,16 @@ section{padding:80px 20px}
 /* Preço */
 .preco-box{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:48px 40px;text-align:center;max-width:520px;margin:0 auto}
 .preco-de{color:var(--gray);font-size:1rem;text-decoration:line-through;margin-bottom:4px}
-.preco-por{font-size:3rem;font-weight:900;color:var(--green2);line-height:1}
+.preco-por{font-size:3rem;font-weight:900;color:var(--gold2);line-height:1}
 .preco-label{color:var(--gray);font-size:.88rem;margin:8px 0 6px}
 .preco-parcel{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:28px}
 .selos{display:flex;justify-content:center;gap:24px;margin-top:20px;flex-wrap:wrap}
 .selo{font-size:.75rem;color:var(--gray);display:flex;align-items:center;gap:6px}
-.selo::before{content:"✓";color:var(--green2);font-weight:900}
+.selo::before{content:"✓";color:var(--gold2);font-weight:900}
 
 /* Garantia */
 .garantia-box{display:flex;gap:32px;align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:40px;max-width:680px;margin:0 auto}
-.garantia-badge{flex-shrink:0;width:100px;height:100px;background:linear-gradient(135deg,var(--green1),var(--green2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem}
+.garantia-badge{flex-shrink:0;width:100px;height:100px;background:linear-gradient(135deg,#b8922a,#f0d060);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem}
 .garantia-text h3{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:10px}
 .garantia-text p{color:var(--gray);font-size:.9rem;line-height:1.7}
 
@@ -144,7 +157,7 @@ section{padding:80px 20px}
 .final-cta p{color:var(--gray);max-width:540px;margin:0 auto 36px;font-size:.97rem;line-height:1.75}
 
 /* Arrow icon */
-.arrow{fill:var(--green2);width:18px;height:18px;flex-shrink:0;margin-top:3px}
+.arrow{fill:var(--gold2);width:18px;height:18px;flex-shrink:0;margin-top:3px}
 
 @media(max-width:768px){
   .pain-grid,.quem-grid,.mod-grid,.mat-grid,.pilares-grid,.dep-grid{grid-template-columns:1fr}
@@ -161,15 +174,23 @@ section{padding:80px 20px}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-tag">MAPA DA REFORMA TRIBUTÁRIA</div>
-    <h1>O que a reforma tributária vai custar à sua empresa em 2027 <em>depende do que você decidir agora.</em></h1>
-    <p>Um mapa objetivo da LC 214 e da LC 224 para advogados, contadores e empresários que precisam transformar leitura de lei em decisão estratégica antes que o tempo feche a janela.</p>
-    <div class="hero-img">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <div class="hero-logo-icon">◈</div>
+        <div class="hero-logo-text">
+          <div class="hero-logo-desafio">DESAFIO</div>
+          <div class="hero-logo-name">MAPA DA<br>REFORMA</div>
+        </div>
+      </div>
+      <h1>O que a reforma tributária vai custar à sua empresa em 2027 <em>depende do que você decidir agora.</em></h1>
+      <p>Um mapa objetivo da LC 214 e da LC 224 para advogados, contadores e empresários que precisam transformar leitura de lei em decisão estratégica antes que o tempo feche a janela.</p>
+      <p>Com o Prof. Dr. Éderson Porto — Doutor em Direito Tributário pela UFRGS, 20 anos de atuação, recuperação de tributos na casa de centenas de milhões de reais.</p>
+      <a href="#" class="btn">QUERO ACESSAR O MAPA</a>
+    </div>
+    <div class="hero-right">
       <img src="ederson-1.png" alt="Éderson Porto" id="hero-img">
     </div>
-    <div class="vsl-box">▶ VSL</div>
-    <a href="#" class="btn btn-full">QUERO ACESSAR O MAPA</a>
   </div>
 </section>
 
@@ -359,7 +380,7 @@ section{padding:80px 20px}
     </div>
     <br><br>
     <div style="text-align:center">
-      <a href="#" class="btn btn-full" style="background:linear-gradient(90deg,var(--blue),var(--blue2))">QUERO GARANTIR MEU ACESSO</a>
+      <a href="#" class="btn btn-full">QUERO GARANTIR MEU ACESSO</a>
     </div>
   </div>
 </section>
